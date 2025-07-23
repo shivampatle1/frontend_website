@@ -20,3 +20,11 @@ const nextConfigWithPwa = withPWA({
     nextConfig
 );
 module.exports = pwa==='1'?nextConfigWithPwa:nextConfig ;
+
+// next.config.js
+module.exports = {
+  swcMinify: true,
+  experimental: {
+    forceSwcTransforms: true, // use native SWC instead of buggy WASM
+  },
+};
